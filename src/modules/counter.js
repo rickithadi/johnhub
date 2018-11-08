@@ -1,14 +1,19 @@
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
+
+export const MULTIPLY_REQUESTED = 'counter/MULTIPLY_REQUESTED'
+export const MULTIPLY = 'counter/MULTIPLY'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 
 const initialState = {
   count: 0,
   isIncrementing: false,
+    isMultiplying: false,
   isDecrementing: false
 }
 
+// reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT_REQUESTED:
@@ -20,9 +25,21 @@ export default (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        count: state.count + 1,
+        count: state.count + 10,
         isIncrementing: !state.isIncrementing
       }
+  case MULTIPLY_REQUESTED:
+      return {
+          ...state,
+          isMultiplying: true
+      }
+
+  case MULTIPLY:
+      return {
+          ...state,
+          count: state.count * 10,
+      }
+
 
     case DECREMENT_REQUESTED:
       return {
@@ -93,3 +110,17 @@ export const decrementAsync = () => {
     }, 3000)
   }
 }
+
+export const multiply=()=> {
+    return dispatch => {
+        dispatch({
+            type: MULTIPLY_REQUESTED
+            
+        })
+
+        dispatch({
+            type: MULTIPLY
+        })
+    }
+  
+};

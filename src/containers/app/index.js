@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Link ,NavLink} from 'react-router-dom'
 import Home from '../home'
 import About from '../about'
+import Counter from '../counter'
 import { Menu, Icon } from 'antd';
 import { Layout } from 'antd';
 
@@ -24,7 +25,7 @@ const App = () => (
       </Menu.Item>
       
       <Menu.Item key="/notifications">
-        <NavLink to="/vagene">
+        <NavLink to="/counter">
           <Icon type="notification" />
           <span>Notifications</span>
         </NavLink>
@@ -40,6 +41,7 @@ const App = () => (
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
+      <Route exact path="/counter" component={Counter} />
     </main>
   </div>
 )

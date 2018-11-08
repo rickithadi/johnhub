@@ -6,7 +6,8 @@ import {
   increment,
   incrementAsync,
   decrement,
-  decrementAsync
+    decrementAsync,
+    multiply
 } from '../../modules/counter'
 
 const Home = props => (
@@ -15,6 +16,8 @@ const Home = props => (
     <p>Count: {props.count}</p>
 
     <p>
+
+      <button onClick={props.multiply}>multi</button>
       <button onClick={props.increment}>Increment</button>
       <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
         Increment Async
@@ -46,10 +49,11 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       increment,
+        multiply,
       incrementAsync,
       decrement,
       decrementAsync,
-      changePage: () => push('/about-anus')
+      changePage: () => push('/about-us')
     },
     dispatch
   )
