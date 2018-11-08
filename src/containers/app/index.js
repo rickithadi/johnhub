@@ -33,11 +33,11 @@ const App = () => (
     </Menu>
 
 
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-      <Link to="/vagene">show bob</Link>
-    </header>
+    {/* <header> */}
+    {/*   <Link to="/">Home</Link> */}
+    {/*   <Link to="/about-us">About</Link> */}
+    {/*   <Link to="/vagene">show bob</Link> */}
+    {/* </header> */}
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />

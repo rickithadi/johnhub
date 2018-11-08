@@ -6,21 +6,24 @@ import {
     decrement,
     decrementAsync,
     multiply
-} from '../../modules/counter'
-import { bindActionCreators } from 'redux'
+} from '../../modules/counter';
+import { bindActionCreators } from 'redux';
+import { fetchPosts ,requestPosts, receivedPosts} from '../../modules/call';
 
 class Counter extends React.Component {
     // state = { count: 0 }
-
        render() {
         return (
             <div>
               <h2>Counter</h2>
+              {this.props.json && this.props.json}
               <div>
                 <button onClick={this.props.decrement}>-</button>
                 <span>{this.props.count}</span>
                 <button onClick={this.props.increment}>+</button>
               </div>
+
+              <button onClick={this.props.fetchPosts}>fetchuuu</button>
             </div>
         )
     }
@@ -37,9 +40,11 @@ class Counter extends React.Component {
 const mapStateToProps = ({ counter }) => ({
     count: counter.count,
     isIncrementing: counter.isIncrementing,
-    isDecrementing: counter.isDecrementing
+    isDecrementing: counter.isDecrementing,
 })
-
+const mapCalls=({call})=>({
+    json: call.json
+})
 
 const mapDispatchToProps = dispatch =>
       bindActionCreators(
@@ -49,6 +54,9 @@ const mapDispatchToProps = dispatch =>
               incrementAsync,
               decrement,
               decrementAsync,
+              fetchPosts,
+              requestPosts,
+              receivedPosts
               // changePage: () => push('/about-us')
           },
           dispatch

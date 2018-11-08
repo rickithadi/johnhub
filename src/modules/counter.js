@@ -1,6 +1,5 @@
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
-
 export const MULTIPLY_REQUESTED = 'counter/MULTIPLY_REQUESTED'
 export const MULTIPLY = 'counter/MULTIPLY'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
@@ -10,7 +9,10 @@ const initialState = {
   count: 0,
   isIncrementing: false,
     isMultiplying: false,
-  isDecrementing: false
+    isDecrementing: false,
+
+    isFetching: false,
+    subs:[]
 }
 
 // reducer
@@ -124,3 +126,4 @@ export const multiply=()=> {
     }
   
 };
+
