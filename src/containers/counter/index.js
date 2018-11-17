@@ -23,7 +23,13 @@ class Counter extends React.Component {
                 <button onClick={this.props.increment}>+</button>
               </div>
 
-              <button onClick={this.props.fetchPosts}>fetchuuu</button>
+              <button onClick={this.props.requestPosts}>fetchuuu</button>
+              <button onClick={this.props.fetchPosts}>chuuu</button>
+              <br/>
+              {this.props.json}
+              {/* {this.props.json && this.props.json.map((post, i) => ( */}
+              {/*     <div key={i} className="station" >{post.kind} </div> */}
+              {/*   ))} */}
             </div>
         )
     }
@@ -37,10 +43,12 @@ class Counter extends React.Component {
 
 
 // export default Counter;
-const mapStateToProps = ({ counter }) => ({
+const mapStateToProps = ({ counter, call }) => ({
     count: counter.count,
     isIncrementing: counter.isIncrementing,
     isDecrementing: counter.isDecrementing,
+    
+    json: call.json
 })
 const mapCalls=({call})=>({
     json: call.json
@@ -65,4 +73,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter)
+)(Counter )

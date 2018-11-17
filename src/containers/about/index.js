@@ -1,5 +1,4 @@
 import React from 'react'
-import RECEIVE_POSTS from '../../modules/call.js'
 
 
 

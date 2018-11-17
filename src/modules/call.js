@@ -11,7 +11,7 @@ export default(state={}, action)=>{
     case REQUEST_POSTS:
         return { ...state, loading: true };
     case RECEIVE_POSTS:
-        return { ...state, json: {'bob':'anus'}, loading: false };
+        return { ...state, json:action.json ,loading: false };
     default:
         return state;
     }
@@ -31,16 +31,16 @@ export const receivedPosts = json => ({
     type: RECEIVE_POSTS,
     json: json,
 });
-export function fetchPosts(channel) {
+export function fetchPosts() {
     return function (dispatch) {
         dispatch(requestPosts());
-        return fetch(`https://reddit.com/r/singapore.json`)
+        return fetch('https://reddit.com/r/singapore.json')
             .then(
                 response => response.json(),
                 error => console.log('An error occurred.', error),
             )
             .then((json) => {
-                dispatch(receivedPosts(json));
+                dispatch(receivedPosts(json.kind));
             },
                  );
     };
