@@ -1,8 +1,9 @@
-import React from 'react'
-import { Route, Link ,NavLink} from 'react-router-dom'
-import Home from '../home'
-import About from '../about'
-import Counter from '../counter'
+import { Route, Link ,NavLink} from 'react-router-dom';
+import React from 'react';
+import Home from '../home';
+import About from '../about';
+import Cats from '../cats';
+import Counter from '../counter';
 import { Menu, Icon } from 'antd';
 import { Layout } from 'antd';
 
@@ -30,6 +31,15 @@ const App = () => (
           <span>Notifications</span>
         </NavLink>
       </Menu.Item>
+
+
+      <Menu.Item key="/cats">
+        <NavLink to="/cats">
+          <Icon type="smile" />
+          <span>cats</span>
+        </NavLink>
+      </Menu.Item>
+      
     </Menu>
 
 
@@ -41,6 +51,7 @@ const App = () => (
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
+      <Route exact path="/cats" component={Cats} />
       <Route exact path="/counter" component={Counter} />
     </main>
   </div>

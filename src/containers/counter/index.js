@@ -60,15 +60,6 @@ class Counter extends React.Component {
         );
     }
 }
-// function mapStateToProps(state) {
-//     return {
-//         count: state.count
-//     };
-// }
-// export default connect(mapStateToProps)(Counter);
-
-
-// export default Counter;
 const mapStateToProps = ({ counter, call }) => ({
     count: counter.count,
     isIncrementing: counter.isIncrementing,
@@ -99,4 +90,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter )
+)(Counter)
