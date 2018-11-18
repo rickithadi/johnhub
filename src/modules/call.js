@@ -40,7 +40,9 @@ export function fetchPosts() {
                 error => console.log('An error occurred.', error),
             )
             .then((json) => {
-                dispatch(receivedPosts(json.kind));
+               let data=json.data.children.map((d) => d.data.title);
+                
+                dispatch(receivedPosts(data));
             },
                  );
     };

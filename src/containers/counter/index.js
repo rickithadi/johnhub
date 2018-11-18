@@ -12,26 +12,27 @@ import { fetchPosts ,requestPosts, receivedPosts} from '../../modules/call';
 
 class Counter extends React.Component {
     // state = { count: 0 }
+
        render() {
+ 
         return (
             <div>
               <h2>Counter</h2>
-              {this.props.json && this.props.json}
               <div>
                 <button onClick={this.props.decrement}>-</button>
                 <span>{this.props.count}</span>
                 <button onClick={this.props.increment}>+</button>
               </div>
 
-              <button onClick={this.props.requestPosts}>fetchuuu</button>
               <button onClick={this.props.fetchPosts}>chuuu</button>
               <br/>
-              {this.props.json}
-              {/* {this.props.json && this.props.json.map((post, i) => ( */}
-              {/*     <div key={i} className="station" >{post.kind} </div> */}
-              {/*   ))} */}
-            </div>
-        )
+              {this.props.json && this.props.json.map((i)=>
+                 <div className="sub" key={i}>{i}
+
+                 <hr/></div>
+                                   )}
+           </div>
+        );
     }
 }
 // function mapStateToProps(state) {

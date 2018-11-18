@@ -10,7 +10,6 @@ const initialState = {
   isIncrementing: false,
     isMultiplying: false,
     isDecrementing: false,
-
     isFetching: false,
     subs:[]
 }
