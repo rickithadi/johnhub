@@ -31,10 +31,10 @@ export const receivedPosts = json => ({
     type: RECEIVE_POSTS,
     json: json,
 });
-export function fetchPosts() {
+export function fetchPosts(sub) {
     return function (dispatch) {
         dispatch(requestPosts());
-        return fetch('https://reddit.com/r/singapore.json')
+        return fetch('https://reddit.com/r/'+sub+'.json')
             .then(
                 response => response.json(),
                 error => console.log('An error occurred.', error),
