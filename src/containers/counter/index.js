@@ -14,9 +14,7 @@ import { Button ,Select } from 'antd';
 
 
 class Counter extends React.Component {
-    // fetchPosts = (value) => {
-    //     this.props.fetchPosts(value);
-    // } 
+  
        render() {
            const Option = Select.Option;
           

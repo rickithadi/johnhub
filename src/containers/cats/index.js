@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {fetchCats, receivedCats, requestCats} from '../../modules/cats';
+import {fetchFucks, receivedFucks, requestFucks} from '../../modules/fuck';
 
 class Cats extends React.Component{
     render(){
@@ -12,11 +13,14 @@ class Cats extends React.Component{
               <button onClick={()=>this.props.fetchCats()}>pussy</button>
              <img src={this.props.cat && this.props.cat}/>
               {/* <ImageLoader file={this.props.cat && this.props.cat}/> */}
+
+              <button onClick={()=>this.props.fetchFucks()}>fuck</button>
+              {this.props.fuck && this.props.fuck}
             </div>
                )}
 }
-const mapStateToProps = ({ cats }) => ({
-    
+const mapStateToProps = ({ cats, fuck }) => ({
+    fuck: fuck ,
     cat: cats.cat
 })
 const mapDispatchToProps = dispatch =>
@@ -24,7 +28,10 @@ const mapDispatchToProps = dispatch =>
           {
               fetchCats,
               requestCats,
-             receivedCats
+              receivedCats,
+              fetchFucks,
+              requestFucks,
+              receivedFucks
               // changePage: () => push('/about-us')
           },
           dispatch
