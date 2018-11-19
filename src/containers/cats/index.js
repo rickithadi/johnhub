@@ -12,7 +12,6 @@ class Cats extends React.Component{
       <p>Did you get here via Redux?</p>
               <button onClick={()=>this.props.fetchCats()}>pussy</button>
              <img src={this.props.cat && this.props.cat}/>
-              {/* <ImageLoader file={this.props.cat && this.props.cat}/> */}
 
               <button onClick={()=>this.props.fetchFucks()}>fuck</button>
               {this.props.fuck && this.props.fuck}
@@ -20,7 +19,7 @@ class Cats extends React.Component{
                )}
 }
 const mapStateToProps = ({ cats, fuck }) => ({
-    fuck: fuck ,
+    fuck: fuck.fuck.message ,
     cat: cats.cat
 })
 const mapDispatchToProps = dispatch =>

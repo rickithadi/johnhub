@@ -38,14 +38,13 @@ export function fetchFucks() {
         })
 
         return fetch(request)
-        // return fetch('http:www.foaas.com/bag/:anus',{'Accept': 'application/json'})
             .then(
                 response => response.json(),
                 error => console.log('An error occurred.', error),
             )
-            .then((json) => {
-                console.log(json);
-               dispatch(receivedFucks(json));
+            .then((fuck) => {
+                console.log(fuck);
+               dispatch(receivedFucks(fuck));
             },
                  );
     };
