@@ -1,9 +1,9 @@
-export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
-export const INCREMENT = 'counter/INCREMENT'
-export const MULTIPLY_REQUESTED = 'counter/MULTIPLY_REQUESTED'
-export const MULTIPLY = 'counter/MULTIPLY'
-export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
-export const DECREMENT = 'counter/DECREMENT'
+export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED';
+export const INCREMENT = 'counter/INCREMENT';
+export const MULTIPLY_REQUESTED = 'counter/MULTIPLY_REQUESTED';
+export const MULTIPLY = 'counter/MULTIPLY';
+export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED';
+export const DECREMENT = 'counter/DECREMENT';
 
 const initialState = {
   count: 0,

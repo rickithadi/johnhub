@@ -20,15 +20,15 @@ const App = () => (
       </Menu.Item>
       <Menu.Item key="/about">
         <NavLink to="/about-us">
-          <Icon type="about" />
+          <Icon type="info-circle" />
           <span>about</span>
         </NavLink>
       </Menu.Item>
       
       <Menu.Item key="/notifications">
         <NavLink to="/counter">
-          <Icon type="notification" />
-          <span>Notifications</span>
+          <Icon type="plus" />
+          <span>Counter</span>
         </NavLink>
       </Menu.Item>
 

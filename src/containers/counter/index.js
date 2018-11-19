@@ -14,9 +14,9 @@ import { Button ,Select } from 'antd';
 
 
 class Counter extends React.Component {
-    fetchPosts = (value) => {
-        this.props.fetchPosts(value);
-    } 
+    // fetchPosts = (value) => {
+    //     this.props.fetchPosts(value);
+    // } 
        render() {
            const Option = Select.Option;
           
@@ -67,10 +67,6 @@ const mapStateToProps = ({ counter, call }) => ({
     
     json: call.json
 })
-const mapCalls=({call})=>({
-    json: call.json
-})
-
 const mapDispatchToProps = dispatch =>
       bindActionCreators(
           {
