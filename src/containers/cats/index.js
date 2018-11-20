@@ -20,8 +20,9 @@ class Cats extends React.Component{
         return (
             <div style={{ background: '#ECECEC', padding: '30px' }}>
 
-                <Card title={this.props.quote}>
-                </Card>
+                <Card >
+                  <h2 style={{textAlign:'center'}}>{this.props.quote}
+</h2>                 </Card>
 
               <Row type="flex" justify="space-around" align="middle">
                 <Col span={4} >
