@@ -43,7 +43,6 @@ export function fetchFucks() {
                 error => console.log('An error occurred.', error),
             )
             .then((fuck) => {
-                console.log(fuck);
                dispatch(receivedFucks(fuck));
             },
                  );

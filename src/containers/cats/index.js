@@ -4,22 +4,35 @@ import { connect } from 'react-redux';
 import {fetchCats, receivedCats, requestCats} from '../../modules/cats';
 import {fetchFucks, receivedFucks, requestFucks} from '../../modules/fuck';
 import {fetchQuotes, receivedQuotes, requestQuotes} from '../../modules/quotes';
+import { Card } from 'antd';
+
+import { Row, Col } from 'antd';
 
 class Cats extends React.Component{
+    componentDidMount(){
+       this.props.fetchQuotes();
+       this.props.fetchFucks();
+      this.props.fetchCats();
+
+    }
+
     render(){
         return (
-            <div>
-      <h1>CATTE Page</h1>
-      <p>Did you get here via Redux?</p>
-              <button onClick={()=>this.props.fetchCats()}>pussy</button>
+            <div style={{ background: '#ECECEC', padding: '30px' }}>
+
+                <Card title={this.props.quote}>
+                </Card>
+
+              <Row type="flex" justify="space-around" align="middle">
+                <Col span={4} >
              <img src={this.props.cat && this.props.cat}/>
 
-              <button onClick={()=>this.props.fetchFucks()}>fuck</button>
-              {this.props.fuck && this.props.fuck}
-              <hr/>  
-              <button onClick={()=>this.props.fetchQuotes()}>fuck</button>
-              {this.props.quote && this.props.quote}
-              
+                </Col>
+
+            <Col span={4}> 
+              <h2>{this.props.fuck && this.props.fuck}</h2> 
+</Col>
+               </Row>
             </div>
                )}
 }
