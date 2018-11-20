@@ -38,16 +38,16 @@ class Counter extends React.Component {
               <button onClick={()=>this.props.fetchPosts('all')}>chuuu</button>
               <br/>
               {this.props.json && this.props.json.map((i)=>
-                                                      <div className="sub" key={i}>
+     <div className="sub" key={i}>
 
-                                                        <hr/>
-                                                        <Row type="flex" justify="center">
+       <hr/>
+       <Row type="flex" justify="center">
 
-                                                        <Col span={10}>{i}</Col>
+       <Col span={10}>{i}</Col>
 
-                                                        <Col span={2}>
-                                                          <Button type='danger' onClick={this.props.decrement}>-</Button>
-                                                          <Button type='primary' onClick={this.props.increment}>+</Button>
+       <Col span={2}>
+         <Button type='danger' onClick={this.props.decrement}>-</Button>
+         <Button type='primary' onClick={this.props.increment}>+</Button>
                                                         </Col>
                                                       </Row>
                                                         
@@ -64,7 +64,7 @@ const mapStateToProps = ({ counter, call }) => ({
     isDecrementing: counter.isDecrementing,
     
     json: call.json
-})
+});
 const mapDispatchToProps = dispatch =>
       bindActionCreators(
           {
@@ -79,9 +79,9 @@ const mapDispatchToProps = dispatch =>
               // changePage: () => push('/about-us')
           },
           dispatch
-      )
+      );
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter)
+)(Counter);
