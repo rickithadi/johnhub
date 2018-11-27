@@ -18,7 +18,6 @@ class App extends React.Component {
     };
 
     onCollapse = (collapsed) => {
-        console.log(collapsed);
         this.setState({ collapsed });
     }
 
@@ -28,54 +27,76 @@ class App extends React.Component {
   <div>
     <Layout style={{ minHeight: '100vh' }}>
     <Sider
+      style={{ background: '#fff' }}
     collapsible
       collapsed={this.state.collapsed}
       onCollapse={this.onCollapse}
     >
-    <Menu theme="dark"  mode="inline" >
+      <br/>
+      <br/>
+      
+    <Menu theme="light"  mode="inline" >
+      <Menu.Item key="/home" style={{ textAlign: 'center' }}>
+        <NavLink to="/">
+          <Icon type="smile" theme="outlined" style={{ textAlign: 'center' }} />
+        </NavLink>
+      </Menu.Item>
+
+      <br/>
+
       <Menu.Item key="/home">
         <NavLink to="/">
-          <Icon type="home" />
+          <Icon type="home" theme="twoTone" />
           <span>home</span>
         </NavLink>
       </Menu.Item>
+
+      <hr/>
+
       <Menu.Item key="/about">
         <NavLink to="/about-us">
-          <Icon type="info-circle" />
-          <span>about</span>
+          <Icon type="info-circle" theme="twoTone" />
+          <span>Track</span>
         </NavLink>
       </Menu.Item>
       
-      <Menu.Item key="/notifications">
+      <hr/>
+
+      <Menu.Item key="/counter">
         <NavLink to="/counter">
-          <Icon type="plus" />
-          <span>Counter</span>
+          {/* <Icon type="plus" /> */}
+          <Icon type="fund" theme="twoTone" />
+          <span>Overview</span>
         </NavLink>
       </Menu.Item>
 
+      <hr/>
 
       <Menu.Item key="/cats">
         <NavLink to="/cats">
-          <Icon type="smile" />
-          <span>cats</span>
+          <Icon type="smile" theme="twoTone" />
+          <span>Settings</span>
         </NavLink>
       </Menu.Item>
       
     </Menu>
 
     </Sider>
-
-    {/* <header> */}
-    {/*   <Link to="/">Home</Link> */}
-    {/*   <Link to="/about-us">About</Link> */}
-    {/*   <Link to="/vagene">show bob</Link> */}
-    {/* </header> */}
+      <Layout>
+        <Header style={{ background: '#fff', padding: 0 }}>Header</Header>
+        <br/>
+        <Content style={{ margin: '0 16px' }}>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}> 
+             
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/counter" component={Counter} />
-    </main>
+    </main></div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+      </Layout>
 </Layout>
   </div>
     )}
