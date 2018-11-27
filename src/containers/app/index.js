@@ -9,9 +9,30 @@ import { Layout } from 'antd';
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
-const App = () => (
+
+    // const App = () => (
+
+class App extends React.Component {
+    state = {
+        collapsed: false,
+    };
+
+    onCollapse = (collapsed) => {
+        console.log(collapsed);
+        this.setState({ collapsed });
+    }
+
+    render() {
+        return(
+   
   <div>
-    <Menu  mode="horizontal" theme="dark">
+    <Layout style={{ minHeight: '100vh' }}>
+    <Sider
+    collapsible
+      collapsed={this.state.collapsed}
+      onCollapse={this.onCollapse}
+    >
+    <Menu theme="dark"  mode="inline" >
       <Menu.Item key="/home">
         <NavLink to="/">
           <Icon type="home" />
@@ -42,6 +63,7 @@ const App = () => (
       
     </Menu>
 
+    </Sider>
 
     {/* <header> */}
     {/*   <Link to="/">Home</Link> */}
@@ -54,7 +76,9 @@ const App = () => (
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/counter" component={Counter} />
     </main>
+</Layout>
   </div>
-)
-
+    )}
+}
 export default App
+

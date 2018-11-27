@@ -46,7 +46,7 @@ const mapDispatchToProps = dispatch =>
       bindActionCreators(
           {
               fetchCats,
-              requestCats,
+            requestCats,
               receivedCats,
               fetchFucks,
               requestFucks,
