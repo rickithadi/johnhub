@@ -23,6 +23,12 @@ const authReducer = (state = initialState, action) => {
             isAuthenticating:false,
             isLoggedIn:true
         };
+    case LOGIN_SUCCESS:
+        return{
+            ...state,
+            isAuthenticating:false,
+            isLoggedIn:true
+        };
     case LOGOUT:
         return{
             ...state,
@@ -37,6 +43,11 @@ export const login = username => ({
     type:LOGIN,
     username:username
 });
+export const requestLogin = ()=> ({
+    type:LOGIN_REQUESTED,
+});
+
+
 
 // mimicking an async API login endpoing
 const fakeLoginRequest = username =>
@@ -48,16 +59,15 @@ const fakeLoginRequest = username =>
 
 // handling async login 
 export const doLogin = username => async dispatch => {
-    // incrementProgress is responsible for progress status.
-    // Firing a spinner while fetching login info.
-    dispatch(incrementProgress());
-    try {
-        const userResponse = await fakeLoginRequest(username);
-        dispatch(userLogin(userResponse));
-        // if successfull change our route to "dashboard"
-        history.push("/dashboard");
-    } catch (error) {
-        handleError(error);
-    } finally {
-        dispatch(decrementProgress());
-    }};
+    return function(dispatch){
+        dispatch(requestLogin());
+        return fetch(''+username)
+            .then(
+                response=> response.json(),
+                error=> console.log(error),
+            )
+            .then((json)=>{
+                
+            })
+    }
+ };
